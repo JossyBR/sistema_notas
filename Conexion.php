@@ -11,7 +11,7 @@
 
     public function __construct(){
         try {
-            $db = new PDO ("{$this->driver}:host={$this->host};dbname={this->bd}", $this->usuario, $this->contrasena);
+            $db = new PDO ("{$this->driver}:host={$this->host};dbname={$this->bd}", $this->usuario, $this->contrasena);
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $db;
         } catch (PDOException $e) {

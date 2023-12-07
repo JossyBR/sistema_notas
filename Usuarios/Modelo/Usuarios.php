@@ -40,7 +40,7 @@ session_start(); //esto nos permt hacer uso de la variable $_SESSION
 
     //VALIDAR LA SESION
 
-    public function validateSession (){
+    public function validateSession(){
         if($_SESSION['ID'] == null){ //en caso de que no EXISTA UNA sesion se redirige al index.ph
             header('Location: ../../index.php');
         }
