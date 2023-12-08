@@ -58,9 +58,9 @@ $Modelo = new Estudiates();
                 <a href="delete.php" target="_blank">Eliminar</a>
             </td>
         </tr>
-        <?php
+        <!-- <?php
             }
-        ?>
+        ?> -->
     </table>
 
 </body>
