@@ -6,7 +6,7 @@ require_once('../Modelo/Estudiantes.php');
 $ModeloUsuarios = new Usuarios();
 $ModeloUsuarios->validateSession();
 
-$Modelo = new Estudiates();
+$Modelo = new Estudiantes();
 
 
 ?>
@@ -20,7 +20,7 @@ $Modelo = new Estudiates();
 </head>
 <body>
     <h1>Estudiantes</h1>
-    <a href="add.ph" target="_blank">Registrar estudiantes</a><br><br>
+    <a href="add.php" target="_blank">Registrar estudiantes</a><br><br>
     <table border="1">
         <tr>
             <th>Id</th>
@@ -44,23 +44,25 @@ $Modelo = new Estudiates();
 
 
         <tr>
-            <td>1</td>
-            <td>Diego</td>
-            <td>Palacio</td>
-            <td>4214214</td>
-            <td>diego@gmail.com</td>
-            <td>Español</td>
-            <td>Stiven Tangarife</td>
-            <td>98%</td>
-            <td>2019-10-26</td>
+            <td><?php echo $Estudiante['ID_ESTUDIANTE'] ?></td>
+            <td><?php echo $Estudiante['NOMBRE'] ?></td>
+            <td><?php echo $Estudiante['APELLIDO'] ?></td>
+            <td><?php echo $Estudiante['DOCUMENTO'] ?></td>
+            <td><?php echo $Estudiante['CORREO'] ?></td>
+            <td><?php echo $Estudiante['MATERIA'] ?></td>
+            <td><?php echo $Estudiante['DOCENTE'] ?></td>
+            <td><?php echo $Estudiante['PROMEDIO'] ?> %</td>
+            <td><?php echo $Estudiante['FECHA_REGISTRO'] ?></td>
             <td>
                 <a href="edit.php" target="_blank">Editar</a>
                 <a href="delete.php" target="_blank">Eliminar</a>
             </td>
         </tr>
-        <!-- <?php
+
+        <?php
             }
-        ?> -->
+        ?>
+
     </table>
 
 </body>

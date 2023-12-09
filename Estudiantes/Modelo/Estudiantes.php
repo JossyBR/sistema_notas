@@ -58,7 +58,7 @@ require_once('../../Conexion.php');
         $rows = null;
         $statement = $this->db->prepare("SELECT * FROM  estudiantes");
         $statement->execute();
-        while($result = $statement->fecth()){
+        while($result = $statement->fetch()){
             $rows[] = $result;
         }
         return $rows;
