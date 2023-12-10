@@ -38,11 +38,8 @@ $Modelo = new Estudiantes();
         <?php
         $Estudiantes = $Modelo->get();
         if($Estudiantes != null){
-            foreach($Estudiantes as $Estudiante)
-
+            foreach ($Estudiantes as $Estudiante) {
         ?>
-
-
         <tr>
             <td><?php echo $Estudiante['ID_ESTUDIANTE'] ?></td>
             <td><?php echo $Estudiante['NOMBRE'] ?></td>
@@ -54,13 +51,14 @@ $Modelo = new Estudiantes();
             <td><?php echo $Estudiante['PROMEDIO'] ?> %</td>
             <td><?php echo $Estudiante['FECHA_REGISTRO'] ?></td>
             <td>
-                <a href="edit.php" target="_blank">Editar</a>
-                <a href="delete.php" target="_blank">Eliminar</a>
+                <a href="edit.php?Id=<?php echo $Estudiante['ID_ESTUDIANTE']?>" target="_blank">Editar</a>
+                <a href="delete.php?Id=<?php echo $Estudiante['ID_ESTUDIANTE']?>" target="_blank">Eliminar</a>
             </td>
         </tr>
 
         <?php
             }
+        }
         ?>
 
     </table>

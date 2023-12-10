@@ -22,7 +22,7 @@ require_once('../../Conexion.php');
         $rows = null;
         $statement = $this->db->prepare("SELECT * FROM  materias");
         $statement->execute();
-        while($result = $statement->fecth()){
+        while($result = $statement->fetch()){
             $rows[] = $result;
         }
         return $rows;

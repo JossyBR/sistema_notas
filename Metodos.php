@@ -11,7 +11,7 @@ require_once('Conexion.php');
         $rows = null;
         $statement = $this->db->prepare("SELECT * FROM  materias");
         $statement->execute();
-        while($result = $statement->fecth()){
+        while($result = $statement->fetch()){
             $rows[] = $result;
         }
         return $rows;
@@ -20,6 +20,7 @@ require_once('Conexion.php');
     public function getDocentes(){
         $rows = null;
         $statement = $this->db->prepare("SELECT * FROM usuarios WHERE PERFIL = 'Docente'");
+        $statement->execute();
         while($result = $statement->fetch()){
             $rows[] = $result;
         }
