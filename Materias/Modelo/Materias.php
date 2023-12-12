@@ -33,14 +33,14 @@ require_once('../../Conexion.php');
         $statement = $this->db->prepare("SELECT * FROM  materias WHERE ID_MATERIA = :Id");
         $statement->bindParam(':Id', $Id);
         $statement->execute();
-        while($result = $statement->fecth()){
+        while($result = $statement->fetch()){
             $rows[] = $result;
         }
         return $rows;
     }
 
     public function update($Id, $Materia){
-        $statement = $this->db->prepare("UPDATE materias SET MATERIA = :Materia, WHERE ID_MATERIA = :Id");
+        $statement = $this->db->prepare("UPDATE materias SET MATERIA = :Materia WHERE ID_MATERIA = :Id");
         $statement->bindParam(':Id', $Id);
         $statement->bindParam(':Materia', $Materia);
         if($statement->execute()){

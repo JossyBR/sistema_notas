@@ -24,7 +24,7 @@ $Modelo = new Materias();
 <body>
     <h1>Materias</h1>
     <a href="add.php" target="_blank">Registrar Materias</a>
-    <table>
+    <table border="1">
         <tr>
             <th>Id</th>
             <th>Nombre</th>
