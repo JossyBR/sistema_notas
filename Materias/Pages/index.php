@@ -5,7 +5,7 @@ require_once('../Modelo/Materias.php');
 // require_once('../../Metodos.php');
 
 $ModeloUsuarios = new Usuarios();
-$ModeloUsuarios->validateSession();
+$ModeloUsuarios->validateSessionAdministrator();
 
 $Modelo = new Materias();
 
@@ -23,13 +23,13 @@ $Modelo = new Materias();
 </head>
 <body>
     <h1>Materias</h1>
-
+    <h3>Bienvenido: <?php echo $ModeloUsuarios->getNombre(); ?> - <?php echo $ModeloUsuarios->getPerfil(); ?></h3>
     <h1>
         <a href="../../Administradores/Pages/index.php">Administradores</a> -
         <a href="../../Docentes/Pages/index.php">Docentes</a> - 
         <a href="#">Materias</a> - 
         <a href="../../Estudiantes/Pages/index.php">Estudiantes</a>
-        <a href="">Salir</a>
+        <a href="../../Usuarios/Controladores/Salir.php">Salir</a>
     </h1> 
 
 

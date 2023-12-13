@@ -6,7 +6,7 @@ require_once('../Modelo/Docentes.php');
 $ModeloUsuarios = new Usuarios();
 $ModeloDocentes = new Docentes();
 
-$ModeloUsuarios->validateSession();
+$ModeloUsuarios->validateSessionAdministrator();
 
 ?>
 
@@ -19,13 +19,13 @@ $ModeloUsuarios->validateSession();
 </head>
 <body>
     <h1>Docente</h1> 
-
+    <h3>Bienvenido: <?php echo $ModeloUsuarios->getNombre(); ?> - <?php echo $ModeloUsuarios->getPerfil(); ?></h3>
     <h1>
         <a href="../../Administradores/Pages/index.php">Administradores</a> - 
         <a href="#">Docentes</a> - 
         <a href="../../Materias/Pages/index.php">Materias</a> - 
         <a href="../../Estudiantes/Pages/index.php">Estudiantes</a>
-        <a href="">Salir</a>
+        <a href="../../Usuarios/Controladores/Salir.php">Salir</a>
     </h1> 
 
     <a href="add.php" target='_blank'>Registrar Nuevo Docente</a> <br><br>

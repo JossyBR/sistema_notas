@@ -20,13 +20,31 @@ $Modelo = new Estudiantes();
 </head>
 <body>
     <h1>Estudiantes</h1>
+    <h3>Bienvenido: <?php echo $ModeloUsuarios->getNombre(); ?> - <?php echo $ModeloUsuarios->getPerfil(); ?></h3>
+    
+    <!-- Condicion para mostrar solo estudiantes en el menu, cuando el perfil es Docente -->
+    <?php
+    if($ModeloUsuarios->getPerfil() == 'Docente'){
+    ?>
+     <h1>
+        <a href="#">Estudiantes</a>
+        <a href="../../Usuarios/Controladores/Salir.php">Salir</a>
+    </h1>
+    <?php
+    } else {
+    ?>
     <h1>
         <a href="../../Administradores/Pages/index.php">Administradores</a> - 
         <a href="../../Docentes/Pages/index.php">Docentes</a> - 
-        <a href="../../Materias/Pages/index.php">Materias</a> - 
-        <a href="#">Estudiantes</a>
-        <a href="">Salir</a>
-    </h1> 
+        <a href="../../Materias/Pages/index.php">Materias</a> -
+        <a href="#">Estudiantes</a> - 
+        <a href="../../Usuarios/Controladores/Salir.php">Salir</a>
+    </h1>
+    <?php
+    }
+    ?>
+    
+     
 
     <a href="add.php" target="_blank">Registrar estudiantes</a><br><br>
     <table border="1">

@@ -6,7 +6,7 @@ require_once('../Modelo/Administradores.php');
 $ModeloUsuarios = new Usuarios();
 $ModeloAdministradores = new Administradores();
 
-$ModeloUsuarios->validateSession();
+$ModeloUsuarios->validateSessionAdministrator();
 
 ?>
 
@@ -18,12 +18,13 @@ $ModeloUsuarios->validateSession();
     <title>Sistema de Notas</title>
 </head>
 <body>
+    <h3>Bienvenido: <?php echo $ModeloUsuarios->getNombre(); ?> - <?php echo $ModeloUsuarios->getPerfil(); ?></h3>
     <h1>
         <a href="#">Administradores</a> - 
         <a href="../../Docentes/Pages/index.php">Docentes</a> - 
         <a href="../../Materias/Pages/index.php">Materias</a> - 
         <a href="../../Estudiantes/Pages/index.php">Estudiantes</a>
-        <a href="">Salir</a>
+        <a href="../../Usuarios/Controladores/Salir.php">Salir</a>
     </h1> 
 
     <a href="add.php" target='_blank'>Registrar nuevo administrador</a> <br><br>
