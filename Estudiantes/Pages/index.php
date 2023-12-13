@@ -20,6 +20,14 @@ $Modelo = new Estudiantes();
 </head>
 <body>
     <h1>Estudiantes</h1>
+    <h1>
+        <a href="../../Administradores/Pages/index.php">Administradores</a> - 
+        <a href="../../Docentes/Pages/index.php">Docentes</a> - 
+        <a href="../../Materias/Pages/index.php">Materias</a> - 
+        <a href="#">Estudiantes</a>
+        <a href="">Salir</a>
+    </h1> 
+
     <a href="add.php" target="_blank">Registrar estudiantes</a><br><br>
     <table border="1">
         <tr>

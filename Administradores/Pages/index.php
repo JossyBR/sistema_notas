@@ -18,7 +18,13 @@ $ModeloUsuarios->validateSession();
     <title>Sistema de Notas</title>
 </head>
 <body>
-    <h1>Administradores</h1> 
+    <h1>
+        <a href="#">Administradores</a> - 
+        <a href="../../Docentes/Pages/index.php">Docentes</a> - 
+        <a href="../../Materias/Pages/index.php">Materias</a> - 
+        <a href="../../Estudiantes/Pages/index.php">Estudiantes</a>
+        <a href="">Salir</a>
+    </h1> 
 
     <a href="add.php" target='_blank'>Registrar nuevo administrador</a> <br><br>
 

@@ -23,6 +23,16 @@ $Modelo = new Materias();
 </head>
 <body>
     <h1>Materias</h1>
+
+    <h1>
+        <a href="../../Administradores/Pages/index.php">Administradores</a> -
+        <a href="../../Docentes/Pages/index.php">Docentes</a> - 
+        <a href="#">Materias</a> - 
+        <a href="../../Estudiantes/Pages/index.php">Estudiantes</a>
+        <a href="">Salir</a>
+    </h1> 
+
+
     <a href="add.php" target="_blank">Registrar Materias</a>
     <table border="1">
         <tr>
