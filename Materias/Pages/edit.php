@@ -27,19 +27,22 @@ $InformacionMateria = $Modelo->getById($Id);
     <input type="hidden" name="Id" value="<?php echo $Id ?>">
 
     <?php
-    if($InformacionMateria != null){
-        foreach($InformacionMateria as $Info){
+    if ($InformacionMateria != null) {
+        foreach ($InformacionMateria as $Info) {
+            
     ?>
-   
+
     Nombre <br>
-    <input type="text" name="Nombre" required="" autocomplete="off" placeholder="Nombre Materia" value="<?php echo $Info['MATERIA'] ?>" > <br><br>
+    <input type="text" name="Materia" required="" autocomplete="off" placeholder="Nombre Materia" value="<?php echo $Info['MATERIA'] ?>"  > <br><br>
     
     <?php
-         }
+        }
     }
     ?>
-   
+    
     <input type="submit" value="Editar Materia">
+    
     </form>
+    
 </body>
 </html>
