@@ -9,7 +9,7 @@ require_once('../../Conexion.php');
     }
 
     public function add($Nombre, $Apellido, $Usuario, $Password){
-        $statement = $this->db->prepare("INSERT INTO usuarios (NOMBRE, APELLIDO, USUARIO, PASSWORD, PERFIL ESTADO) VALUES (:Nombre, :Apellido, :Usuario, :Password, 'Administrador', 'Activo')");
+        $statement = $this->db->prepare("INSERT INTO usuarios (NOMBRE, APELLIDO, USUARIO, PASSWORD, PERFIL, ESTADO) VALUES (:Nombre, :Apellido, :Usuario, :Password, 'Administrador', 'Activo')");
         $statement->bindParam(':Nombre', $Nombre);
         $statement->bindParam(':Apellido', $Apellido);
         $statement->bindParam(':Usuario', $Usuario);
@@ -26,7 +26,7 @@ require_once('../../Conexion.php');
         $rows = null;
         $statement = $this->db->prepare("SELECT * FROM  usuarios WHERE PERFIL = 'Administrador'");
         $statement->execute();
-        while($result = $statement->fecth()){
+        while($result = $statement->fetch()){
             $rows[] = $result;
         }
         return $rows;
@@ -37,14 +37,14 @@ require_once('../../Conexion.php');
         $statement = $this->db->prepare("SELECT * FROM  usuarios WHERE PERFIL = 'Administrador' AND ID_USUARIO = :Id");
         $statement->bindParam(':Id', $Id);
         $statement->execute();
-        while($result = $statement->fecth()){
+        while($result = $statement->fetch()){
             $rows[] = $result;
         }
         return $rows;
     }
 
     public function update($Id, $Nombre, $Apellido, $Usuario, $Password, $Estado){
-        $statement = $this->db->prepare("UPDATE usuarios SET NOMBRE = :Nombre, APELLIDO = Apellido, USUARIO = :Usuario, PASSWORD = :Password, ESTADO = :Estado WHERE ID_USUARIO = :Id");
+        $statement = $this->db->prepare("UPDATE usuarios SET NOMBRE = :Nombre, APELLIDO = :Apellido, USUARIO = :Usuario, PASSWORD = :Password, ESTADO = :Estado WHERE ID_USUARIO = :Id");
         $statement->bindParam(':Id', $Id);
         $statement->bindParam(':Nombre', $Nombre);
         $statement->bindParam(':Apellido', $Apellido);
