@@ -23,8 +23,10 @@ $ModeloMaterias = new Materias();
     <title>Sistema de Notas</title>
 </head>
 <body>
-    <?php include('../../Nav/Nav.php'); ?> 
-    <h3>Bienvenido: <?php echo $ModeloUsuarios->getNombre(); ?> - <?php echo $ModeloUsuarios->getPerfil(); ?></h3>
+    <?php include('../../Nav/Nav.php'); ?>
+    
+    <div class="mx-3">
+    <h3 class="mt-5 mb-5">Bienvenido: <?php echo $ModeloUsuarios->getNombre(); ?> - <?php echo $ModeloUsuarios->getPerfil(); ?></h3>
     <!-- <h1>
         <a href="../../Administradores/Pages/index.php">Administradores</a> -
         <a href="../../Docentes/Pages/index.php">Docentes</a> - 
@@ -34,8 +36,8 @@ $ModeloMaterias = new Materias();
     </h1>  -->
 
 
-    <a href="add.php" target="_blank">Registrar Materias</a>
-    <table border="1">
+    <a href="add.php" target="_blank" class="mt-5 text-dark fw-bold link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Registrar Materias</a>
+    <table class="table table-dark table-striped table-bordered text-center mt-4">
         <tr>
             <th>Id</th>
             <th>Nombre</th>
@@ -52,8 +54,8 @@ $ModeloMaterias = new Materias();
             <td><?php echo $Materia['MATERIA']?>
             </td>
             <td>
-                <a href="edit.php?Id=<?php echo $Materia['ID_MATERIA'] ?>">Editar</a>
-                <a href="delete.php?Id=<?php echo $Materia['ID_MATERIA'] ?>">Eliminar</a>
+                <a href="edit.php?Id=<?php echo $Materia['ID_MATERIA'] ?>" class="px-3 text-light link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Editar</a>
+                <a href="delete.php?Id=<?php echo $Materia['ID_MATERIA'] ?>" class="px-3 text-light link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Eliminar</a>
             </td>
         </tr>
         <?php
@@ -61,5 +63,8 @@ $ModeloMaterias = new Materias();
         }
         ?>
     </table>
+    </div>
+
+    
 </body>
 </html>

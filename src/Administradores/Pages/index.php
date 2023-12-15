@@ -15,26 +15,29 @@ $ModeloUsuarios->validateSessionAdministrator();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Sistema de Notas</title>
 </head>
 <body>
-    <h3>Bienvenido: <?php echo $ModeloUsuarios->getNombre(); ?> - <?php echo $ModeloUsuarios->getPerfil(); ?></h3>
-    <h1>
+    <?php include('../../Nav/Nav.php'); ?> 
+    <div class="mx-3">
+    <h3 class="mt-5 mb-5">Bienvenido: <?php echo $ModeloUsuarios->getNombre(); ?> - <?php echo $ModeloUsuarios->getPerfil(); ?></h3>
+    <!-- <h1>
         <a href="#">Administradores</a> - 
         <a href="../../Docentes/Pages/index.php">Docentes</a> - 
         <a href="../../Materias/Pages/index.php">Materias</a> - 
         <a href="../../Estudiantes/Pages/index.php">Estudiantes</a>
         <a href="../../Usuarios/Controladores/Salir.php">Salir</a>
-    </h1> 
+    </h1>  -->
 
-    <a href="add.php" target='_blank'>Registrar nuevo administrador</a> <br><br>
+    <a href="add.php" target='_blank' class="mt-5 text-dark fw-bold link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Registrar nuevo administrador</a> <br><br>
 
-    <table border="1">
+    <table class="table table-dark table-striped table-bordered text-center ">
         <tr>
             <th>Id</th>
             <th>Nombre</th>
             <th>Apellido</th>
-            <th>Usarios</th>
+            <th>Usuarios</th>
             <th>Perfil</th>
             <th>Estado</th>
             <th>Acciones</th>
@@ -53,8 +56,8 @@ $ModeloUsuarios->validateSessionAdministrator();
             <td><?php echo $Administrador['PERFIL'] ?></td>
             <td><?php echo $Administrador['ESTADO'] ?></td>
             <td>
-                <a href="edit.php?Id=<?php echo $Administrador['ID_USUARIO'] ?>">Editar</a>
-                <a href="delete.php?Id=<?php echo $Administrador['ID_USUARIO'] ?>">Eliminar</a>
+                <a href="edit.php?Id=<?php echo $Administrador['ID_USUARIO'] ?>" class="px-3 text-light link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Editar</a>
+                <a href="delete.php?Id=<?php echo $Administrador['ID_USUARIO'] ?>" class="px-3 text-light link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Eliminar</a>
             </td>
         </tr>
         <?php
@@ -62,5 +65,7 @@ $ModeloUsuarios->validateSessionAdministrator();
          }
         ?>
     </table>
+    </div>
+    
 </body>
 </html>
